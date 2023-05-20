@@ -9,4 +9,6 @@ export class NgifStrDirComponent {
   courses = [0];
   isLogIn : boolean = false;
   isLogOut : boolean = true; 
+  show: boolean = true;  
+  condition: boolean = true;  
 }
