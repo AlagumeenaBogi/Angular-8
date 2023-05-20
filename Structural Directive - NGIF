@@ -115,6 +115,11 @@ If the 'ngIf' is an Angular control flow directive, please make sure that either
  Result:
   Got it Result.
   
-  
+ Image:
+ https://github.com/AlagumeenaBogi/Angular-8/blob/main/angularsample/ngif.png
+https://github.com/AlagumeenaBogi/Angular-8/blob/main/angularsample/ngif_html.png
+https://github.com/AlagumeenaBogi/Angular-8/blob/main/angularsample/ngif_ts.png
+https://github.com/AlagumeenaBogi/Angular-8/blob/main/angularsample/NGIF_ERROR.png
+https://github.com/AlagumeenaBogi/Angular-8/blob/main/angularsample/NGIF_working_Fine.png
 *********************************************************************************************************
 
