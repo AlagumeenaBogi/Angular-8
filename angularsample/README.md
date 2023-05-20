@@ -1,5 +1,15 @@
 # Angularsample
 
+It's using angular 8 Source code.
+
+File size compresed removed angular folder,vscode folder and node modules.
+
+http://localhost:4200/
+
+I have attached the image.
+
+# Angularsample
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
 ## Development server
