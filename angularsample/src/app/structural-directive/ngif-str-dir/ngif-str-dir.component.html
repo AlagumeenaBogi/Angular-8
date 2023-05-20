@@ -16,3 +16,17 @@
 <ng-template #isLogOut> 
    You're logged out.. 
 </ng-template>
+
+<p *ngIf="condition">  
+  condition is true and ngIf is true.  
+</p>  
+<p *ngIf="!condition">  
+  condition is false and ngIf is false.  
+</p>  
+
+<div *ngIf="condition; else elseBlock">  
+  Content to render when condition is true.  
+  </div>  
+  <ng-template #elseBlock>  
+  Content to render when condition is false.  
+  </ng-template>  
