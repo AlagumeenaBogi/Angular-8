@@ -1,3 +1,9 @@
+Structural Directives: Structural directives start with a * sign. These directives are used to manipulate and change the structure of the DOM elements. For example, *ngIf directive, *ngSwitch directive, and *ngFor directive.
+
+*ngIf Directive: The ngIf allows us to Add/Remove DOM Element.
+*ngSwitch Directive: The *ngSwitch allows us to Add/Remove DOM Element. It is similar to switch statement of C#.
+*ngFor Directive: The *ngFor directive is used to repeat a portion of HTML template once per each item from an iterable list (Collection).
+
 Structural Directive : NGIF
 
 Angular :8
