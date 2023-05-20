@@ -5,8 +5,14 @@ It's using angular 8 Source code.
 File size compresed removed angular folder,vscode folder and node modules.
 
 http://localhost:4200/
+http://localhost:4200/countryview
+http://localhost:4200/contrynew
+http://localhost:4200/reactive
+http://localhost:4200/template-driven
 
 I have attached the image.
+
+
 
 # Angularsample
 
