@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CountryaddComponent } from './countryadd/countryadd.component';
 import { NgifStrDirComponent } from './structural-directive/ngif-str-dir/ngif-str-dir.component';
 import { StructuralDirectivRoutingeModule } from './structural-directive/structural-directive-routing.module';
+import { NgswitchStrDirComponent } from './structural-directive/ngswitch-str-dir/ngswitch-str-dir.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StructuralDirectivRoutingeModule } from './structural-directive/structu
     reactiveComponent,
     MustMatchDirective,
     CountryaddComponent,
-    NgifStrDirComponent
+   NgifStrDirComponent,
+    NgswitchStrDirComponent
     
   ],
   imports: [
