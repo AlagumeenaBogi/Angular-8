@@ -1,0 +1,134 @@
+Structural Directive : NGSWITCH
+
+Step1:
+Structural directive create to new component.
+
+Step:2
+NGSWITCH component HTMl write the code 
+NGSWITCH component ts write the code 
+
+Step:3
+structural - directive router include to component
+structural - directive module include to component & router
+Step:4
+main - module include to submodule router only (It's must display the router URL) Submodule component intergrate got result.
+main - html include to navigation url
+
+Step:1
+E:\angular\sample\angularsample>cd src/app/structural-directive
+E:\angular\sample\angularsample\src\app\structural-directive>ng g c ngswitch-str-dir
+CREATE src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.html (31 bytes)
+CREATE src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.spec.ts (657 bytes)
+CREATE src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.ts (240 bytes)    
+CREATE src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.css (0 bytes)     
+UPDATE src/app/structural-directive/structural-directive.module.ts (555 bytes)
+E:\angular\sample\angularsample\src\app\structural-directive>cd ../../../
+E:\angular\sample\angularsample>ng serve
+
+Step:2
+E:\angular\sample\angularsample\src\app\structural-directive\ngswitch-str-dir\ngswitch-str-dir.component.html
+<p>ngswitch-str-dir works!</p>
+<!-- <select [(ngModel)]="selectedValue">  
+    <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+</select>  
+<div class='row' [ngSwitch]="selectedValue">  
+    <div *ngSwitchCase="'One'">One is Pressed</div>  
+    <div *ngSwitchCase="'Two'">Two is Selected</div>  
+    <div *ngSwitchDefault>Default Option</div>  
+</div> -->
+<div [ngSwitch]="true">
+    <h1 *ngSwitchCase="tester == 'this' || tester == 'that'">a little bit of this or that value={{tester}}</h1>
+    <h1 *ngSwitchCase="'other'">the other thing value={{tester}}</h1>
+    <h1 *ngSwitchDefault>The default value={{tester}}</h1>    
+  </div>
+
+E:\angular\sample\angularsample\src\app\structural-directive\ngswitch-str-dir\ngswitch-str-dir.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-ngswitch-str-dir',
+  templateUrl: './ngswitch-str-dir.component.html',
+  styleUrls: ['./ngswitch-str-dir.component.css']
+})
+//  class item {  
+//    name: string;  
+//    val: number;  
+//  }  
+export class NgswitchStrDirComponent {
+ // items: item[] = [{name: 'One', val: 1}, {name: 'Two', val: 2}, {name: 'Three', val: 3}];  
+  //  selectedValue: string= 'One';  
+// so the way ngSwitch works with muliple conditions and ors, you need to set ngSwitch=true and
+	// then check your variable for the conditions within the *ngSwitchCase
+  tester = 'that';
+  //tester = 'other';
+  //tester = 'not going to find this';
+}
+
+
+Step:3
+E:\angular\sample\angularsample\src\app\structural-directive\structural-directive-routing.module.ts
+import { NgswitchStrDirComponent } from './ngswitch-str-dir/ngswitch-str-dir.component';
+const routes: Routes = [
+    {path: 'ngswitchcondition', component: NgswitchStrDirComponent}
+];
+
+
+Step:4
+E:\angular\sample\angularsample\src\app\app.module.ts
+
+import { StructuralDirectivRoutingeModule } from './structural-directive/structural-directive-routing.module';
+import { NgswitchStrDirComponent } from './structural-directive/ngswitch-str-dir/ngswitch-str-dir.component';
+
+@NgModule({  declarations: [    NgswitchStrDirComponent]
+
+imports: [    StructuralDirectivRoutingeModule]})
+
+
+E:\angular\sample\angularsample\src\app\app.component.html
+<a class="button" routerLink="/ngswitchcondition">NGSWITCH</a> |
+
+Output:
+http://localhost:4200/ngswitchcondition
+
+ERROR:1
+ERROR in ./src/app/app.module.ts 20:137-160
+
+export 'NgswitchStrDirComponent' (imported as 'NgswitchStrDirComponent') was not found in './structural-directive/ngif-str-dir/ngif-str-dir.component' (possible exports: NgifStrDirComponent)
+
+import { NgswitchStrDirComponent } from './structural-directive/ngif-str-dir/ngif-str-dir.component';
+change to 
+import { NgswitchStrDirComponent } from './ngswitch-str-dir/ngswitch-str-dir.component';
+
+
+ERROR:2
+src/app/app.module.ts:27:5 - error NG6001: The class 'NgswitchStrDirComponent' is listed in the declarations of the NgModule 'AppModule', but is not a directive, a component, or a pipe. Either remove it from the NgModule's declarations, or add an appropriate Angular decorator.
+
+27     NgswitchStrDirComponent
+       ~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.ts:12:14
+    12 export class NgswitchStrDirComponent {
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+    'NgswitchStrDirComponent' is declared here.
+	
+Solution:
+E:\angular\sample\angularsample\src\app\structural-directive\structural-directive.module.ts
+import { NgswitchStrDirComponent } from './ngswitch-str-dir/ngswitch-str-dir.component';
+
+
+ERROR:3
+src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.html:2:9 - error NG8002: Can't bind to 'ngModel' since it isn't a known property of 'select'.
+
+2 <select [(ngModel)]="selectedValue">
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/structural-directive/ngswitch-str-dir/ngswitch-str-dir.component.ts:5:16
+    5   templateUrl: './ngswitch-str-dir.component.html',
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component item.
+
+import { NgswitchStrDirComponent } from './ngswitch-str-dir/ngswitch-str-dir.component';
+import { FormsModule } from '@angular/forms'; //import FormsModule here
+
+
+Error:4
