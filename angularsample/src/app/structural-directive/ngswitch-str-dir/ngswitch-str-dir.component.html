@@ -1,0 +1,14 @@
+<p>ngswitch-str-dir works!</p>
+<!-- <select [(ngModel)]="selectedValue">  
+    <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+</select>  
+<div class='row' [ngSwitch]="selectedValue">  
+    <div *ngSwitchCase="'One'">One is Pressed</div>  
+    <div *ngSwitchCase="'Two'">Two is Selected</div>  
+    <div *ngSwitchDefault>Default Option</div>  
+</div> -->
+<div [ngSwitch]="true">
+    <h1 *ngSwitchCase="tester == 'this' || tester == 'that'">a little bit of this or that value={{tester}}</h1>
+    <h1 *ngSwitchCase="'other'">the other thing value={{tester}}</h1>
+    <h1 *ngSwitchDefault>The default value={{tester}}</h1>    
+  </div>
