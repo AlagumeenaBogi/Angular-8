@@ -1,3 +1,5 @@
+*ngSwitch Directive: The *ngSwitch allows us to Add/Remove DOM Element. It is similar to switch statement of C#.
+
 Structural Directive : NGSWITCH
 
 Step1:
