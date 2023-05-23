@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 import { StructuralDirectivRoutingeModule } from './structural-directive-routing.module';
 import { NgifStrDirComponent } from './ngif-str-dir/ngif-str-dir.component';
 import { NgswitchStrDirComponent } from './ngswitch-str-dir/ngswitch-str-dir.component';
+import { NgforStrDirComponent } from './ngfor-str-dir/ngfor-str-dir.component';
 
 @NgModule({
   declarations: [
     NgifStrDirComponent,
-    NgswitchStrDirComponent
+    NgswitchStrDirComponent,
+    NgforStrDirComponent
   ],
   imports: [
     CommonModule,

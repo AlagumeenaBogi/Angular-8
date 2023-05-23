@@ -1,0 +1,11 @@
+<p>ngfor-str-dir works!</p>
+
+<!-- <ul>
+    <li *ngFor="let val of myJson2">
+      {{ val.LastName }}
+    </li>
+</ul> -->
+
+<div *ngFor = "let title of fetchData">
+    {{title.title}} -- {{title.description}} -- {{title.tagline}} {{title.date}}
+  </div>
