@@ -15,7 +15,7 @@ import { CountryaddComponent } from './countryadd/countryadd.component';
 import { NgifStrDirComponent } from './structural-directive/ngif-str-dir/ngif-str-dir.component';
 import { StructuralDirectivRoutingeModule } from './structural-directive/structural-directive-routing.module';
 import { NgswitchStrDirComponent } from './structural-directive/ngswitch-str-dir/ngswitch-str-dir.component';
-
+import { NgforStrDirComponent } from './structural-directive/ngfor-str-dir/ngfor-str-dir.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +24,8 @@ import { NgswitchStrDirComponent } from './structural-directive/ngswitch-str-dir
     MustMatchDirective,
     CountryaddComponent,
    NgifStrDirComponent,
-    NgswitchStrDirComponent
-    
+    NgswitchStrDirComponent,
+    NgforStrDirComponent    
   ],
   imports: [
     BrowserModule,
