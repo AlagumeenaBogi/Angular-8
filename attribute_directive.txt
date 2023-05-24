@@ -1,0 +1,118 @@
+Attribute Directive:
+The attribute directive changes the appearance or behavior of a DOM element.
+ These directives look like regular HTML attributes in templates.
+ The ngModel directive which is used for two-way is an example of an attribute directive.
+
+NgSwitch: It is used whenever you want to display an element tree consisting of many children. The Angular places only selected element tree into the DOM based on some condition.
+
+NgStyle: Based on the component state, dynamic styles can be set by using NgStyle. Many inline styles can be set simultaneously by binding to NgStyle.
+
+NgClass: It controls the appearance of elements by adding and removing CSS classes dynamically.
+
+E:\angularsample>ng g module attributedirective --routing
+CREATE src/app/attributedirective/attributedirective-routing.module.ts (261 bytes)
+CREATE src/app/attributedirective/attributedirective.module.ts (328 bytes)
+
+E:\angularsample>cd src
+E:\angularsample\src>cd app
+E:\angularsample\src\app>cd attributedirective
+
+E:\angularsample\src\app\attributedirective>ng g c attributedir
+CREATE src/app/attributedirective/attributedir/attributedir.component.html (27 bytes)
+CREATE src/app/attributedirective/attributedir/attributedir.component.spec.ts (641 bytes)
+CREATE src/app/attributedirective/attributedir/attributedir.component.ts (226 bytes)
+CREATE src/app/attributedirective/attributedir/attributedir.component.css (0 bytes)
+UPDATE src/app/attributedirective/attributedirective.module.ts (436 bytes)
+
+E:\angularsample\src\app\attributedirective>
+E:\angularsample\src\app\attributedirective>ng generate directive highlight
+CREATE src/app/attributedirective/highlight.directive.spec.ts (236 bytes)
+CREATE src/app/attributedirective/highlight.directive.ts (147 bytes)
+UPDATE src/app/attributedirective/attributedirective.module.ts (520 bytes)
+
+E:\angularsample\src\app\attributedirective\attributedir\attributedir.component.html
+<p>attributedir works!</p>
+<p [ngClass]="{classOnce:cone,classTwo:ctwo}">Attribute Directive Result ngClass</p>
+
+E:\angularsample\src\app\attributedirective\attributedirective-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AttributedirComponent } from './attributedir/attributedir.component';
+
+const routes: Routes = [ {path: 'attributedirective', component: AttributedirComponent}];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class AttributedirectiveRoutingModule { }
+
+
+E:\angularsample\src\app\attributedirective\attributedir\attributedir.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-attributedir',
+  templateUrl: './attributedir.component.html',
+  styleUrls: ['./attributedir.component.css']
+})
+export class AttributedirComponent {
+  public cone=true;
+  public ctwo=true;
+
+}
+
+E:\angularsample\src\app\attributedirective\attributedir\attributedir.component.css
+
+.classOne
+{
+    color:yellow;
+}
+.classTwo
+{
+    color:red;
+}
+
+E:\angularsample\src\app\attributedirective\attributedirective.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { AttributedirectiveRoutingModule } from './attributedirective-routing.module';
+import { AttributedirComponent } from './attributedir/attributedir.component';
+import { HighlightDirective } from './highlight.directive';
+
+
+@NgModule({
+  declarations: [
+    AttributedirComponent,
+    HighlightDirective
+  ],
+  imports: [
+    CommonModule,
+    AttributedirectiveRoutingModule
+  ]
+})
+export class AttributedirectiveModule { }
+
+E:\angularsample\src\app\app.component.html
+    <a class="button" routerLink="/attributedirective">Attribute Directive </a> |<BR><BR>
+
+E:\angularsample\src\app\app.module.ts
+
+import { AttributedirectiveRoutingModule } from './attributedirective/attributedirective-routing.module';
+import { AttributedirComponent } from './attributedirective/attributedir/attributedir.component';
+
+@NgModule({
+  declarations: [
+    AttributedirComponent  
+  ],
+  imports: [
+    AttributedirectiveRoutingModule,
+    
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
