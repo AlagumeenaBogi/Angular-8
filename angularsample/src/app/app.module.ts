@@ -16,6 +16,9 @@ import { NgifStrDirComponent } from './structural-directive/ngif-str-dir/ngif-st
 import { StructuralDirectivRoutingeModule } from './structural-directive/structural-directive-routing.module';
 import { NgswitchStrDirComponent } from './structural-directive/ngswitch-str-dir/ngswitch-str-dir.component';
 import { NgforStrDirComponent } from './structural-directive/ngfor-str-dir/ngfor-str-dir.component';
+import { AttributedirectiveRoutingModule } from './attributedirective/attributedirective-routing.module';
+import { AttributedirComponent } from './attributedirective/attributedir/attributedir.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,8 @@ import { NgforStrDirComponent } from './structural-directive/ngfor-str-dir/ngfor
     CountryaddComponent,
    NgifStrDirComponent,
     NgswitchStrDirComponent,
-    NgforStrDirComponent    
+    NgforStrDirComponent,
+    AttributedirComponent  
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { NgforStrDirComponent } from './structural-directive/ngfor-str-dir/ngfor
     CountryRoutingModule,
     ReactiveFormsModule,
     StructuralDirectivRoutingeModule,
+    AttributedirectiveRoutingModule,
    // NgForm,
     FormsModule  //Assign FormsModule
    /* RouterModule.forRoot([
