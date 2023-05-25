@@ -18,7 +18,13 @@ import { NgswitchStrDirComponent } from './structural-directive/ngswitch-str-dir
 import { NgforStrDirComponent } from './structural-directive/ngfor-str-dir/ngfor-str-dir.component';
 import { AttributedirectiveRoutingModule } from './attributedirective/attributedirective-routing.module';
 import { AttributedirComponent } from './attributedirective/attributedir/attributedir.component';
+import { PipescomComponent } from './pipescom/pipescom.component';
 
+import { PipessRoutingModule } from './pipess/pipess-routing.module';
+import { PipesComponent } from './pipess/pipes/pipes.component';
+
+//mport { HelloComponent } from './hello.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +35,9 @@ import { AttributedirComponent } from './attributedirective/attributedir/attribu
    NgifStrDirComponent,
     NgswitchStrDirComponent,
     NgforStrDirComponent,
-    AttributedirComponent  
+    AttributedirComponent,
+    PipescomComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +46,8 @@ import { AttributedirComponent } from './attributedirective/attributedir/attribu
     ReactiveFormsModule,
     StructuralDirectivRoutingeModule,
     AttributedirectiveRoutingModule,
+    PipessRoutingModule, 
+    HttpClientModule,
    // NgForm,
     FormsModule  //Assign FormsModule
    /* RouterModule.forRoot([

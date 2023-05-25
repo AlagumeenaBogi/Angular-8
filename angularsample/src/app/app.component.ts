@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+//import { Component } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +14,22 @@ export class AppComponent {
   onSubmit() {
     alert('SUCCESS!! :-)\n\n');
   }
+
+
+  /*name = 'Angular ' + VERSION.major;
+  user: any;
+
+  constructor(private http: HttpClient) {
+    // this.http.get('https://randomuser.me/api').subscribe((res: any) => {
+    //   this.user = res.results[0];
+    //   console.log(this.user);
+    // })
+    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe((res: any) => {
+      console.log(res);
+      this.user = res;
+      console.log(this.user);
+    })
+  }*/
   
 }
 
