@@ -43,19 +43,7 @@ Formatted date:- 5/25/2023
 Hours and minutes:- 11:00
 
 
-modules & router include the files
-
-Account Number: 37726789166
-
-Name: Muthukumari
-
-IFSC CODE : SBIN0012743
-
-
-Account Number: 6104344941
-IFSC CODE: IDIB000B066
-NAME:Muniyandi
-Amount:5100
+modules & router include the files 
 
 
 https://stackblitz.com/edit/api-example?file=src%2Fapp%2Fapp.component.ts
