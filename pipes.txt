@@ -1,0 +1,61 @@
+Pipes are referred as filters. It helps to transform data and manage data within interpolation, denoted by {{ | }}. It accepts data, arrays, integers and strings as inputs which are separated by ‘|’ symbol. This chapter explains about pipes in detail.
+
+
+E:\angularsample\src\app>ng g m pipess --routing
+CREATE src/app/pipess/pipess-routing.module.ts (249 bytes)
+CREATE src/app/pipess/pipess.module.ts (280 bytes)
+
+E:\angularsample\src\app>cd pipess
+
+E:\angularsample\src\app\pipess>ng g c pipes
+CREATE src/app/pipess/pipes/pipes.component.html (20 bytes)
+CREATE src/app/pipess/pipes/pipes.component.spec.ts (592 bytes)
+CREATE src/app/pipess/pipes/pipes.component.ts (198 bytes)
+CREATE src/app/pipess/pipes/pipes.component.css (0 bytes)
+UPDATE src/app/pipess/pipess.module.ts (360 bytes)
+
+E:\angularsample\src\app\pipess\pipes\pipes.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-pipes',
+  templateUrl: './pipes.component.html',
+  styleUrls: ['./pipes.component.css']
+})
+export class PipesComponent {
+  presentDate = new Date(); 
+
+}
+E:\angularsample\src\app\pipess\pipes\pipes.component.html
+<p>pipes works testing!</p>   Today's date :- {{presentDate}} <br>
+Today's date :- {{presentDate | date }} <br>
+short date :- {{presentDate | date:'shortDate' }} <br/>
+Full date :- {{presentDate | date:'fullDate' }} <br/> 
+Formatted date:- {{presentDate | date:'M/dd/yyyy'}} <br/> 
+Hours and minutes:- {{presentDate | date:'h:mm'}} 
+
+Output:
+day's date :- Thu May 25 2023 11:00:07 GMT+0530 (India Standard Time)
+Today's date :- May 25, 2023
+short date :- 5/25/23
+Full date :- Thursday, May 25, 2023
+Formatted date:- 5/25/2023
+Hours and minutes:- 11:00
+
+
+modules & router include the files
+
+Account Number: 37726789166
+
+Name: Muthukumari
+
+IFSC CODE : SBIN0012743
+
+
+Account Number: 6104344941
+IFSC CODE: IDIB000B066
+NAME:Muniyandi
+Amount:5100
+
+
+https://stackblitz.com/edit/api-example?file=src%2Fapp%2Fapp.component.ts
