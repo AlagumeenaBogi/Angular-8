@@ -17,3 +17,5 @@ cmd:
 >ctr+C
 >ng serve
 >ng g module attributedirective --routing
+>ng g service restapiservices
+>
