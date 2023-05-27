@@ -25,6 +25,12 @@ import { PipesComponent } from './pipess/pipes/pipes.component';
 
 //mport { HelloComponent } from './hello.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RestapiComponent } from './restapi/restapi.component';
+
+
+import { ApiservicesRoutingModule } from './apiservices/apiservices-routing.module';
+import { RestapiservicesService } from './apiservices/restapiservices.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgforStrDirComponent,
     AttributedirComponent,
     PipescomComponent,
-    PipesComponent
+    PipesComponent,
+    RestapiComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +55,7 @@ import { HttpClientModule } from '@angular/common/http';
     AttributedirectiveRoutingModule,
     PipessRoutingModule, 
     HttpClientModule,
+    ApiservicesRoutingModule,
    // NgForm,
     FormsModule  //Assign FormsModule
    /* RouterModule.forRoot([
@@ -55,7 +63,7 @@ import { HttpClientModule } from '@angular/common/http';
     ]),  */  
     
   ],
-  providers: [],
+  providers: [RestapiservicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
