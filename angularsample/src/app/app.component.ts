@@ -1,6 +1,8 @@
 //import { Component } from '@angular/core';
 import { Component, VERSION } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
+import { environment } from './environments/environment';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,6 +16,8 @@ export class AppComponent {
   onSubmit() {
     alert('SUCCESS!! :-)\n\n');
   }
+  titles = environment.title;
+  apiURL = environment.apiURL;
 
 
   /*name = 'Angular ' + VERSION.major;
