@@ -1,0 +1,244 @@
+E:\angularsample\src\app>ng g module apiservices --routing
+CREATE src/app/apiservices/apiservices-routing.module.ts (254 bytes)
+CREATE src/app/apiservices/apiservices.module.ts (300 bytes)
+
+E:\angularsample\src\app>cd apiservices
+
+E:\angularsample\src\app\apiservices>ng g service restapiservices
+CREATE src/app/apiservices/restapiservices.service.spec.ts (402 bytes)
+CREATE src/app/apiservices/restapiservices.service.ts (144 bytes)
+
+E:\angularsample\src\app\apiservices>ng g c restapia
+CREATE src/app/apiservices/restapi/restapi.component.html (22 bytes)
+CREATE src/app/apiservices/restapi/restapi.component.spec.ts (606 bytes)
+CREATE src/app/apiservices/restapi/restapi.component.ts (206 bytes)
+CREATE src/app/apiservices/restapi/restapi.component.css (0 bytes)
+UPDATE src/app/apiservices/apiservices.module.ts (388 bytes)
+
+E:\angularsample\src\app\apiservices>
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+E:\angularsample\src\app\apiservices\restapiservices.service.ts
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+const API_URL = 'https://jsonplaceholder.typicode.com/';
+@Injectable({
+    providedIn: 'root'
+})
+export class RestapiservicesService {
+
+  constructor(private http: HttpClient) { }
+
+  public get(url:any): Observable<any> {
+    return this.http.get(API_URL + 'todos/' + url).pipe(map(res => res));
+  }
+}
+// /api/users
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+E:\angularsample\src\app\apiservices\apiservices.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ApiservicesRoutingModule } from './apiservices-routing.module';
+import { RestapiComponent } from './restapi/restapi.component';
+
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RestapiservicesService } from './../restapiservices.service';
+
+@NgModule({
+  declarations: [
+    RestapiComponent
+  ],
+  imports: [
+    CommonModule,
+    ApiservicesRoutingModule,
+    BrowserModule, FormsModule, HttpClientModule
+  ],
+  providers: [HttpClient, RestapiservicesService],
+
+})
+export class ApiservicesModule { }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+E:\angularsample\src\app\apiservices\apiservices-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { RestapiComponent } from './restapi/restapi.component';
+
+const routes: Routes = [ {path: 'apiservicedisplay', component: RestapiComponent}];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ApiservicesRoutingModule { }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+E:\angularsample\src\app\apiservices\restapi\restapi.component.ts
+import { Component, OnInit } from '@angular/core';
+import { RestapiservicesService } from './../restapiservices.service';
+
+@Component({
+  selector: 'app-restapi',
+  templateUrl: './restapi.component.html',
+  styleUrls: ['./restapi.component.css']
+})
+
+
+export class RestapiComponent implements OnInit {
+  users: any;
+
+  constructor(private api: RestapiservicesService) { }
+
+  ngOnInit() {
+    this.api.get('/1').subscribe(res => {
+      this.users = res;
+      console.log('data response', this.users);
+    });
+  }
+  
+}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+E:\angularsample\src\app\apiservices\restapi\restapi.component.html
+
+<p>restapi works!</p>
+<p>
+    You will get response in console<br>
+
+    {{users.title}}
+   </p>
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+E:\angularsample\src\app>ng g module apiservices --routing
+CREATE src/app/apiservices/apiservices-routing.module.ts (254 bytes)
+CREATE src/app/apiservices/apiservices.module.ts (300 bytes)
+
+E:\angularsample\src\app>cd apiservices
+
+E:\angularsample\src\app\apiservices>ng g service restapiservices
+CREATE src/app/apiservices/restapiservices.service.spec.ts (402 bytes)
+CREATE src/app/apiservices/restapiservices.service.ts (144 bytes)
+
+E:\angularsample\src\app\apiservices>ng g c restapi
+CREATE src/app/apiservices/restapi/restapi.component.html (22 bytes)
+CREATE src/app/apiservices/restapi/restapi.component.spec.ts (606 bytes)
+CREATE src/app/apiservices/restapi/restapi.component.ts (206 bytes)
+CREATE src/app/apiservices/restapi/restapi.component.css (0 bytes)
+UPDATE src/app/apiservices/apiservices.module.ts (388 bytes)
+
+E:\angularsample\src\app\apiservices>
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+E:\angularsample\src\app\apiservices\restapiservices.service.ts
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+const API_URL = 'https://jsonplaceholder.typicode.com/';
+@Injectable({
+    providedIn: 'root'
+})
+export class RestapiservicesService {
+
+  constructor(private http: HttpClient) { }
+
+  public get(url:any): Observable<any> {
+    return this.http.get(API_URL + 'todos/' + url).pipe(map(res => res));
+  }
+}
+// /api/users
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+E:\angularsample\src\app\apiservices\apiservices.module.ts
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { ApiservicesRoutingModule } from './apiservices-routing.module';
+import { RestapiComponent } from './restapi/restapi.component';
+
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RestapiservicesService } from './../restapiservices.service';
+
+@NgModule({
+  declarations: [
+    RestapiComponent
+  ],
+  imports: [
+    CommonModule,
+    ApiservicesRoutingModule,
+    BrowserModule, FormsModule, HttpClientModule
+  ],
+  providers: [HttpClient, RestapiservicesService],
+
+})
+export class ApiservicesModule { }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+E:\angularsample\src\app\apiservices\apiservices-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { RestapiComponent } from './restapi/restapi.component';
+
+const routes: Routes = [ {path: 'apiservicedisplay', component: RestapiComponent}];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ApiservicesRoutingModule { }
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+E:\angularsample\src\app\apiservices\restapi\restapi.component.ts
+import { Component, OnInit } from '@angular/core';
+import { RestapiservicesService } from './../restapiservices.service';
+
+@Component({
+  selector: 'app-restapi',
+  templateUrl: './restapi.component.html',
+  styleUrls: ['./restapi.component.css']
+})
+
+
+export class RestapiComponent implements OnInit {
+  users: any;
+
+  constructor(private api: RestapiservicesService) { }
+
+  ngOnInit() {
+    this.api.get('/1').subscribe(res => {
+      this.users = res;
+      console.log('data response', this.users);
+    });
+  }
+  
+}
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+E:\angularsample\src\app\apiservices\restapi\restapi.component.html
+
+<p>restapi works!</p>
+<p>
+    You will get response in console<br>
+
+    {{users.title}}
+   </p>
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

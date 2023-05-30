@@ -1,0 +1,68 @@
+E:\angularsample\src\app\environments\environment.ts
+export const environment = {
+  production: true,
+  title: 'Local Environment Heading',
+  apiURL: 'http://localhost:4200'
+};
+
+E:\angularsample\src\app\environments\environment.prod.ts
+export const environment = {
+  production: true,
+  title: 'Prouction  Environment Heading',
+  apiURL: 'http://localhost:4200'
+};
+
+E:\angularsample\src\app\environments\environment.dev.ts
+export const environment = {
+  production: true,
+  title: 'Development Environment Heading',
+  apiURL: 'http://localhost:4200'
+};
+
+
+E:\angularsample\angular.json
+ "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/app/environments/environment.ts",
+                  "with": "src/app/environments/environment.prod.ts"
+                }
+              ],
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/app/environments/environment.ts",
+                  "with": "src/app/environments/environment.dev.ts"
+                }
+              ],
+            }
+          },
+        },
+
+E:\angularsample\src\app\app.component.ts
+import { environment } from './environments/environment';
+export class AppComponent{
+  titles = environment.title;
+  apiURL = environment.apiURL;
+}
+
+E:\angularsample\src\app\app.component.html
+
+<p>{{ apiURL }}</p>
+<h1>{{ titles }}</h1>
+
+ng serve 
+ng serve --configurations=dev
+ng serve --configurations=production
+
+ng build
+ng build --configuration=production
+ng build --configuration=dev
+
+Got 2 error:
+angular.json path declaration got error finally decare to correct path.
+ng serve --configuration=production got error change to configurations working fine.
+
+https://www.itsolutionstuff.com/post/how-to-use-environment-variable-in-angularexample.html

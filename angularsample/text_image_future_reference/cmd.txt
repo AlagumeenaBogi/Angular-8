@@ -1,0 +1,48 @@
+
+
+
+
+cmd:
+>Set -ExecutionPolicy ExecutionPolicy Remotesigned -Scope CurrentUser
+>cls
+>node -v
+>npm -v
+>npm uninstall -g @angular/cli
+>npm catch -clear --force
+>npm catch verify
+>ng version
+>ng new projectname
+>ng g c ngfor-str-dirng 
+>ng g m ngfor-str-dir
+>ng generate directive highlight
+>ctr+C
+>ng serve
+>ng g module attributedirective --routing
+>ng g service restapiservices
+>
+
+cmd:
+>Set -ExecutionPolicy ExecutionPolicy Remotesigned -Scope CurrentUser
+>cls
+>node -v
+>npm -v
+>npm uninstall -g @angular/cli
+>npm catch -clear --force
+>npm catch verify
+>ng version
+>ng new projectname
+>ng g c ngfor-str-dirng 
+>ng g m ngfor-str-dir
+>ng generate directive highlight
+>ctr+C
+>ng serve
+>ng g module attributedirective --routing
+>ng g service restapiservices
+>
+ng serve 
+ng serve --configurations=dev
+ng serve --configurations=production
+
+ng build
+ng build --configuration=production
+ng build --configuration=dev
