@@ -12,6 +12,11 @@ import { environment } from './environments/environment';
 export class AppComponent {
  // courses = [0];
   title = 'Angular 8';
+
+  getstringinterpolation()
+  {
+    return this.title;
+  }
   model: any = {};
   onSubmit() {
     alert('SUCCESS!! :-)\n\n');

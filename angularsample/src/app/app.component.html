@@ -1,11 +1,26 @@
-<!--p> 1.Display the Text with Static component Result</p>
+<p> 1.One Way Binding </p>
 {{title}} 
 <BR><BR>
 
-<p> 2.Display the Text with Static component Result include text box with formmodule</p>
+<p> 2.Two way Binding</p>
     <input type="text" name="" [(ngModel)]="title">
-<BR><BR-->
-   
+<BR><BR>
+
+    <p>4.Property Binding</p>
+    <div [innerHTML]="title"></div><BR><BR>
+
+        
+<p>4.String interpolation</p>
+{{'Angular'+'CLI'}}
+<BR><BR>
+    {{getstringinterpolation()}}<BR><BR>
+     10x8=   {{10*8}}
+
+<p> 3. Environment Variable </p>
+<p>{{ apiURL }}</p>
+<h1>{{ titles }}</h1>
+<BR><BR>
+
     <!--p> 3.Form Submit  Router</p>
     <div class="card m-3">
         <h5 class="card-header">Angular 8 Template-Driven Form Validation</h5>
@@ -117,8 +132,6 @@
 
 <!--app-template-driven></app-template-driven-->
 <router-outlet></router-outlet>
-<p>{{ apiURL }}</p>
-<h1>{{ titles }}</h1>
 
 
 <!-- <p>{{user.name.first}}</p>
