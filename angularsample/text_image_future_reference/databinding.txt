@@ -1,0 +1,36 @@
+E:\angularsample\src\app\app.component.html
+
+<p> 1.One Way Binding </p>
+{{title}} 
+<BR><BR>
+
+<p> 2.Two way Binding</p>
+    <input type="text" name="" [(ngModel)]="title">
+<BR><BR>
+
+
+<p>4.Property Binding</p>
+<div [innerHTML]="title"></div><BR><BR>
+
+
+    <p>4.Property Binding</p>
+    <div [innerHTML]="title"></div><BR><BR>
+
+        
+<p>4.String interpolation</p>
+{{'Angular'+'CLI'}}
+<BR><BR>
+    {{getstringinterpolation()}}<BR><BR>
+     10x8=   {{10*8}}
+
+
+E:\angularsample\src\app\app.component.ts
+  title = 'Angular 8';
+  
+  getstringinterpolation(){
+    return this.title;}
+
+
+E:\angularsample\src\app\app.module.ts
+import { FormsModule } from '@angular/forms'; //import FormsModule here
+
